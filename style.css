@@ -1,3 +1,15 @@
 body {
-    background-color:#C7CED1;
-  }
+  background-color:#111111;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.bodytext {
+    color: #666666;
+}
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
