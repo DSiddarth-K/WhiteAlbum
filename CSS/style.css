@@ -1,0 +1,31 @@
+body {
+  background-color:#111111;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+h1 {
+  font-size: 4em;
+  color: #666666;
+}
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+@font-face { font-family: Raleway-reg; 
+	src: url('../fonts/Raleway/Raleway-VariableFont_wght.ttf'); } 
+.navigation{ /* text in header */
+	color: #666666;
+	text-align: center;
+	line-height: 10vh;
+	font-family: Raleway-reg;
+	font-size: 2em;
+	text-decoration: none;
+
+}
+.navigationBar {
+}
