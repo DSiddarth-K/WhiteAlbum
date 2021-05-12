@@ -1,7 +1,7 @@
 body {
   background-color:#111111;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  padding: 0;
+  margin: 0;
 }
 h1 {
   font-size: 4em;
@@ -9,13 +9,17 @@ h1 {
 }
 .center-screen {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
 }
-
+.example {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.example::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 @font-face { font-family: Raleway-reg; 
 	src: url('../fonts/Raleway/Raleway-VariableFont_wght.ttf'); } 
 .navigation{ /* text in header */
@@ -25,7 +29,22 @@ h1 {
 	font-family: Raleway-reg;
 	font-size: 2em;
 	text-decoration: none;
-
+  text-transform: uppercase;
 }
-.navigationBar {
+
+.box{
+  position: relative;
+  text-align: center;
+  padding-right: 5em;
+  padding-left: 5em;
+  display: flex;
+  list-style: none;
+}
+
+.altContent {
+  background-color:blanchedalmond;
+  width: 100vw;
+  height:10em;
+  display: flex;
+  padding: 5%;
 }
