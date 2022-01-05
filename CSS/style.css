@@ -39,8 +39,8 @@ h1 {
 .box{
   position: relative;
   text-align: center;
-  padding-right: 4em;
-  padding-left: 4em;
+  padding-right: 3em;
+  padding-left: 3em;
   display: flex;
   list-style: none;
 }
