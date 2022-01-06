@@ -50,7 +50,7 @@ body {
 	-webkit-font-smoothing : antialiased;
 	font-size: 19px;
 	background-color: #111111;
-	color: #587e76;
+	color: #04143A;
 }
 ol, ul {
 	list-style: none;
@@ -106,8 +106,8 @@ h1.name {
 
 .job-title {
 	vertical-align: top;
-	background-color: #298A75;
-	color: #111111;
+	background-color: #D9E7F8;
+	color: #4A90E2;
 	font-weight: 600;
 	margin-top: 5px;
 	margin-left: 20px;
