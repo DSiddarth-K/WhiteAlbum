@@ -1,1 +1,1 @@
-#[WhiteAlbum] (https://dsiddarth-k.github.io/WhiteAlbum/Pages/Home.html)
+# Portfolio/Website: https://dsiddarth-k.github.io/WhiteAlbum/Pages/Home.html
