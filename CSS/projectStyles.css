@@ -1,0 +1,187 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header */
+  header {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: right;
+    padding-right: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f39c12;
+  }
+  
+ /* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #6a1b9a, #d32f2f);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%); /* The bottom is slanted */
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  /* Project Details Section */
+  .project-details {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .project-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .project-text {
+    max-width: 1000px;
+    text-align: left;
+  }
+  .project-text p {
+    max-width: 1000px;
+    text-align: left;
+    text-indent: 50px;
+  }
+  
+  .project-gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-gallery2 {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .project-gallery img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .project-gallery2 img {
+    width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-gallery img:hover {
+    transform: scale(1.05);
+  }
+  .project-gallery2 img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+  
+  .list {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding-top:0;
+    
+  }
+  
+  /* List Styling */
+  .list ul {
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  /* List Item Styling */
+  .list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    color: #333;
+    transition: background-color 0.3s ease;
+    text-align: left;
+  }
+  /* Divider Bar */
+.divider {
+    width: 100%; /* Full width of the container */
+    height: 4px; /* Height of the divider */
+    background-color: #333; /* Color of the divider */
+    margin: 40px 0; /* Margin to add space around the divider */
+    position: relative; /* This ensures the pseudo-elements can be positioned relative to the divider */
+    border-radius: 10px; /* This rounds the edges */
+  }
+  .frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid black;
+}
+.frac span.symbol {
+    display: none;
+} 

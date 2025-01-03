@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Page</title>
+  <link rel="stylesheet" href="../../CSS/projectStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../../Pages/Home.html">Home</a></li>
+        <li><a href="../../Pages/HardwareFolder/Hardware.html">Hardware Projects</a></li>
+        <li><a href="../../Pages/ProgrammingFolder/Programming.html">Programming Projects</a></li>
+		<li><a href="../../Pages.DesignProjectsFolder/DesignProjects.html">Design Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Lidar Scanner Project</h1>
+      <p>Created using a MSP432E401Y board and a VL53L1X TOF Sensor</p>
+    </section>
+    <section class="project-details">
+      <div class="project-content">
+        <div class="project-text">
+          <h2>General Description:</h2>
+          <p>
+            The purpose of the device is to collect data on its surrounding environment by taking several distance measurements using a TOF sensor. The TOF sensor works by sending a light signal and measuring the time required to travel back to the sensor and calculates the distance using the speed of light. This sensor is mounted on a motor that spins 360 degrees, and can be controlled by several buttons. The device takes 32 scans every 360 degrees and outputs them using UART. Each 360 degree spin is triggered by an input button on the microcontroller. The motor starting position can also be adjusted using two rotation buttons for the user. An extra button is used to stop serial communication  The PC uses the serial library in python  to open the port. This data is processed by removing the arbitrary numbers and storing the distance. The distance is then used to calculate y and z values, and an x value is added for the loop #. This is then printed into a .xyz file which is used to create a point cloud.
+          </p>
+        </div>
+        <div class="project-gallery">
+          <img src="../../Source/FinalResult2.png" alt="Project Image 1">
+          <img src="../../Source/FinalResult1.png" alt="Project Image 2">
+        </div>
+      </div>
+    <div class="divider"></div>    
+    <section class="project-content">
+    <div>
+        <h2>Features and Specs:</h2>
+        <ul class="list">
+            <li>MSP432E401Y Microcontroller with the Arm Cortex-M4F</li>
+            <li>Distance Measurements from VL53L1X TOF Sensor
+            <li>28BYJ-48 Stepper Motor
+            <li>ULN2003 Motor Controller
+            <li>Buttons to control rotation and stop serial communication 
+            <li>Status LED 
+            <li>Serial communication with PC using pySerial 
+            <li>Environment Plotting
+            <li>3.3V Operating Voltage
+            <li>256kB of SRAM
+            <li>1MB of flash
+            <li>12-bit SAR ADC
+            <li>C++ Microcontroller code, Python PC code
+            <li>Baud rate: 115.2k 
+            <li>Bus speed: 12Mhz
+            </ul>  
+    </div>
+    <div>
+        <div class="project-gallery2">
+            <img src="../../Source/blockdiagram.png" alt="Project Image 1">
+        </div>
+    </div>
+    </section>
+    <div class="divider"></div>    
+        <section class="project-content">
+            <div class="project-text">
+                <h2>Distance Measurements:</h2>
+                <p>
+                    The TOF sensor has an emitter and sensor. The emitter sends a light signal from the emitter, which will then bounce off a target and be received by the emitter. Using the following equations:</p>
+                <div style="text-align: center;">   
+                V = <div class="frac" style="text-align: center;"><span>d</span><span class="symbol">/</span><span class="bottom">t</span></div>
+                , C = <div class="frac" style="text-align: center;"><span>2*d</span><span class="symbol">/</span><span class="bottom">t</span></div>
+                , d = <div class="frac" style="text-align: center;"><span>c*t</span><span class="symbol">/</span><span class="bottom">2</span></div>
+               </div>  <p> 
+Using the distance equation, substituting in the speed of light (3x108 m/s) for v and using the time measured will give us twice the distance since the signal has to go to the target and back. Therefore this value is divided by 2 to give us a distance measurement. This distance measurement is then transmitted to the microcontroller using the I2C protocol.	
+The TOF sensor has the following 4 connections to the microcontroller:</p>
+                
+                <ul style="padding-left: 50px; ">
+                    <li>SDA (I2C data line)</li>
+                    <li>SCL (I2C clock line)</li>
+                    <li>SCL (I2C clock line)</li>
+                    <li>Vin</li>
+                    <li>Gnd</li>
+                </ul>
+                    <p>    The microcontroller pins used are the 3.3V, GND, PB2 and PB3 pins. The Vin and 3.3v are connected, grounds are connected, SCL is connected to PB3 and SDA is connected to PB3. The sensor transmits the data of the distance through the SDA line in 8 bit packets
+                
+                    Once the data is acquired by the microcontroller, it is then transmitted to the connected PC through UART protocol using serial communication through COM 3 of the laptop. 
+
+                    The code provided opens the serial port COM3 with a baud rate of 115.2k.
+                    
+                    The code provided also reads the UART output as a string and is stored in a variable, in this case x.
+                </p>    
+                    
+                <p>
+                    The result is an array that stores the different numbers printed in separate indexes. The distance measurement is stored in the first index. This is indexed, and multiplied by the sin or cos of the angle of the scan to find the y, z coordinates respectively. The angle is tracked by a counter variable that increments every time the scan is complete and multiplies the incrementing variable by 11.25 since there are 32 scans and each scan will occur once the motor spins 11.25 degrees beyond its current position. This is then printed into a .xyz file in the following format:
+                    
+                     [ X Y Z, X2 Y2 Z2, Xn Yn Zn]
+                    
+                    Where X is an arbitrary value that is incremented (in this program the increment is 400) every loop as this represents the displacement of the device. The Y and Z are calculated using distance as explained above. 
+                    
+                </p>
+            </div>
+            <div>
+                <div class="project-gallery2">
+                    <img src="../../Source/datatransfer.png" alt="Project Image 1">
+                </div>
+                <div>
+                    <code></code>
+                </div>
+            </div>        
+        </section>
+        <br>
+        <section class="project-content">
+            <div class="project-text">
+                <h2>Visualization</h2>
+                <p>
+                    Data is transmitted using UART and processed using a split function, which extracts the distance measurement. This measurement is only sorted if the UART entry has a 0, 1 or 2 in the entry which none of the initially transmitted lines for setup have. The second result in the printed serial input is taken, and calculates the coordinates using cos and sin with a constant number based on how many scans are taken per rotation and a counting variable that increments the degree based on the degree of the motor. Then an X value is attached to each spin to represent each plane. This number is then printed into a .xyz file for visualization. The visualization is done using open3d, which takes the x, y and z coordinates in the xyz file and creates a cloud of data points. Then the data points are connected using lines which are appended using a library function.
+                </p>
+            </div>
+        </section>
+        <div class="divider"></div>
+        <section class="project-contenbt">
+            <div class="project-text"><h2>Programming Logic Flowchart(s)</h2></div>
+            <div class="project-gallery">
+                <img src="../../Source/flow1.PNG" alt="Project Image 1">
+                <div class="project-gallery2">
+                    <img src="../../Source/flow2.PNG" alt="Project Image 1">
+                </div>
+            </div>
+        </section>
+    </section>
+  </main>
+  <footer>
+    <p>Contact: Kachus1@mcmaster.ca</p>
+  </footer>
+</body>
+</html>

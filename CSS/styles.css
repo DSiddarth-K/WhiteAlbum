@@ -122,27 +122,24 @@
   }
   
   .cta-button {
-    display: inline-block;
-    background-color: #f39c12;
-    padding: 20px 40px; /* Square button padding */
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px; /* Slight rounding for corners */
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-    width: 200px; /* Fixed width for square look */
-    height: 200px; /* Fixed height to make it square */
-    text-align: center;
-    line-height: 160px; /* Vertically center text */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
   }
   
   .cta-button:hover {
-    background-color: #d87b0f;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   }
   
   .cta-button:active {
-    background-color: #c77b0f;
+    background-color: #ece9e5;
   }
   
   /* Footer */
