@@ -1,0 +1,196 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: right;
+    padding-right: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f39c12;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient Background */
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .hero-text {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .hero-image {
+    flex: 1;
+    max-width: 45%;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Project Category Buttons */
+  .project-buttons {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .project-buttons .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .project-buttons h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #f39c12;
+    padding: 20px 40px; /* Square button padding */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px; /* Slight rounding for corners */
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    width: 200px; /* Fixed width for square look */
+    height: 200px; /* Fixed height to make it square */
+    text-align: center;
+    line-height: 160px; /* Vertically center text */
+  }
+  
+  .cta-button:hover {
+    background-color: #d87b0f;
+  }
+  
+  .cta-button:active {
+    background-color: #c77b0f;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero .container {
+      flex-direction: column;
+    }
+  
+    .hero-text {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .hero-image {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-text p {
+      font-size: 1rem;
+    }
+  
+    .project-buttons .container {
+      padding: 10px;
+    }
+  
+    .cta-button {
+      font-size: 0.9rem;
+      padding: 15px 30px; /* Adjust padding for smaller screens */
+      width: 150px; /* Smaller square size for mobile */
+      height: 150px; /* Smaller square size for mobile */
+      line-height: 120px; /* Adjust text center alignment */
+    }
+  }
+  
