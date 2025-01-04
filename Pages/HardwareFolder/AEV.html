@@ -29,7 +29,22 @@
         <div class="project-text">
           <h2>General Description:</h2>
           <p>
-            
+          Part of the 3EY4 EE course at Mcmaster University, this final project course allowed me to develop many useful skills. This project requried:</p>
+          <ul>
+            <li>Setting up ROS</li>
+            <li>Localization and Mapping with AEV</li>
+            <li>Collision Avoidance and E-brake</li>
+            <li>Wall Fallowing and Gap Methods of Autonomous Driving</li>
+            <li>Virtual Barrier Autonomous Driving</li>
+            <li>Computer Vision</li>
+          </ul>
+          <p>
+          Some of the most challenging parts of this project was understanding the kinematics and system dynamics of the vehicle. 
+          </p>
+          <p>
+            Coordinate Frames 
+          </p>
+          <p>
           </p>
         </div>
         <div class="project-gallery1">
@@ -41,22 +56,35 @@
       <div class="project-text">
         <h2>Lidar:</h2>
         <p>
-          
+          The following point cloud map of a hallway was created by visualising the measurements calculated by the onboard LIDAR sensor. In ROS, the lidar sensor has a node which publishes the data over a "/scan" topic, which the simulator and the visualiser are subscribed to.
         </p>
       </div>
       <div class="project-gallery1">
+        <img src="../../Source/AEVLidar.png" alt="Project Image 1">
       </div>
     </div>
     <div class="divider"></div> 
     <div class="project-content">
       <div class="project-text">
-        <h2>Power and Motor Controller:</h2>
+        <h2>Motor Controller:</h2>
         <p>
+          For this stage, the output for a certain input was studied. The motor controller could use either a speed command (top) or duty cycle command (bottom). The speed (left) and the voltage/current (right) output vary based on the type of input. As seen in the plots: 
         </p>
       </div>
       <div class="project-gallery1">
+        <img src="../../Source/speedcommand.png" alt="Project Image 1">
       </div>
-    </div>  
+    </div>
+    <div class="project-content">
+      <div class="project-text"> 
+        <h2></h2><p>The speed command directly controls the speed of the motor with the use of an encoder while the duty cycle controls the PWM signal applied to the inverter. The duty cycle command settles quicker and has a lower RPM overshoot than the speed command, but requires a higher current overshoot 
+        </p>
+        </div>
+        <div class="project-gallery1">
+          <img src="../../Source/pwmcommand.png" alt="Project Image 1">
+        </div>
+      </div>
+    </div> 
     <div class="divider"></div> 
     <div class="project-content">
       <div class="project-text">
