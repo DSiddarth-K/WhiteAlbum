@@ -184,6 +184,7 @@
     margin: 40px 0; /* Margin to add space around the divider */
     position: relative; /* This ensures the pseudo-elements can be positioned relative to the divider */
     border-radius: 10px; /* This rounds the edges */
+    
   }
   .frac {
     display: inline-block;
