@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Page</title>
+  <link rel="stylesheet" href="../../CSS/projectStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Use dark theme for Prism -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" /> 
+</head>
+<style>
+    pre {
+      border-radius: 0.75rem;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      background: #161b22;
+      overflow-x: auto;
+      margin-top: 2rem;
+      color: #ffffff; 
+      text-align: left; /* Ensure code is left-aligned */
+      white-space: pre-wrap; /* Allow long lines to wrap within the container */
+    }
+    pre::-webkit-scrollbar {
+      height: 8px;
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #30363d;
+      border-radius: 4px;
+    }
+    pre::-webkit-scrollbar-track {
+      background: transparent;
+    }
+</style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../../Pages/Home.html">Home</a></li>
+        <li><a href="../../Pages/HardwareFolder/Hardware.html">Hardware Projects</a></li>
+        <li><a href="../../Pages/ProgrammingFolder/Programming.html">Programming Projects</a></li>
+        <li><a href="../../Pages.DesignProjectsFolder/DesignProjects.html">Design Projects</a></li>
+        <li><a href="../../Pages/Home.html">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>n-bit Quantizer</h1>
+      <p>Made in Matlab</p>
+    </section>
+    <section class="project-details">
+      <div class="project-content">
+        <div class="project-text">
+          <h2>Program:</h2>
+        </div>
+        <div class="project-gallery2">
+        </div>
+      </div>
+      <div class="project-content">
+        <pre><code class="language-cpp">// This is a sample C++ code
+#include <iostream>
+using namespace std;
+            
+int sum(int a, int b) {
+    return a + b;
+}
+            
+int main() {
+    return 0;
+}
+        </code></pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- Move the Prism script to the end of the body -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+
+  <footer>
+    <p>Contact: Kachus1@mcmaster.ca</p>
+  </footer>
+</body>
+</html>
