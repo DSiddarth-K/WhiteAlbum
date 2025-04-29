@@ -14,7 +14,7 @@
       border-radius: 0.75rem;
       padding: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      background: #161b22;
+      background: #8a8c8f;
       overflow-x: auto;
       margin-top: 2rem;
       color: #ffffff; 
@@ -58,25 +58,52 @@
         </div>
       </div>
       <div class="project-content">
-        <pre><code class="language-cpp">// This is a sample C++ code
-using namespace std;
-            
-int sum(int a, int b) {
-    return a + b;
-}
-            
-int main() {
-    return 0;
-}
-        </code></pre>
+        <pre class="prettyprint">function [YBit,BinCounts,LowerBucketValue,UpperBucketValue,UniqueQuantize] = quantize(Samples,Bits,LowerRange,UpperRange)
+            Range = UpperRange-LowerRange;
+            Bins = 2^Bits;
+            BinRange = Range/Bins;
+            BinCounts = zeros(1,Bins);
+            YBit = Samples;
+            UniqueQuantize=[];
+            for SampleIndex = 1:length(YBit)
+                for BinIndex = 1:Bins
+                    LowerBucketValue = ((BinIndex-1)*BinRange)+LowerRange;
+                    UpperBucketValue = ((BinIndex)*BinRange)+LowerRange;
+                    if YBit(SampleIndex) &lt; UpperBucketValue && YBit(SampleIndex) >= LowerBucketValue 
+                        BinCounts(BinIndex) = BinCounts(BinIndex)+1;
+                        BucketMean = (LowerBucketValue+UpperBucketValue)/2;
+                        YBit(SampleIndex) = BucketMean;
+                        if(isempty(find(UniqueQuantize==BucketMean)))
+                            UniqueQuantize(length(UniqueQuantize)+1)=BucketMean;
+                        end
+                    end
+                end
+            end
+        end</pre>
+        <div class="project-text">
+            <h2>General Description:</h2>
+            <p>
+                The quantize function in MATLAB is designed to perform uniform quantization on a given array of input samples. It accepts four input parameters: the array of real-valued samples (samples), the number of quantization bits (bits), and the lower and upper bounds of the quantization range (lowerRange and upperRange). Based on the number of bits specified, the function computes the number of bins and determines the range of each bin accordingly. 
+            </p>
+            <p>
+                Within the function, each sample is evaluated to determine which bin it falls into. The sample is then replaced by the mean value of that bin, effectively quantizing the data to discrete levels. As this process occurs, the function keeps track of how many samples fall into each bin using the binCounts array. Additionally, it maintains a list of the unique quantized values encountered in unique_Quantize.
+            </p>
+            <p>
+                The final output of the function includes the quantized data array (y3bit), the histogram of bin occupancy (binCounts), and the lower and upper boundaries of the most recently processed bin (lowerBucketValue and UpperBucketValue). This function provides a straightforward implementation of mid-rise uniform quantization, useful in signal processing and data compression contexts.
+            </p>
+        </div>
+      </div>
+      <div class="project-content">
+        <div class="project-gallery1">
+            <div><img src="../../Source/audioSignal.png" alt="Project Image 1"><img src="../../Source/SignalPowerPlot.png" alt="Project Image 1"><p>Original Aduio Samples</p></div>
+            <div><img src="../../Source/Quantized.png" alt="Project Image 1"><p>Quantized Aduio Samples</p></div>
+        </div>
       </div>
     </section>
   </main>
   <footer>
     <p>Contact: Kachus1@mcmaster.ca</p>
   </footer>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 </html>
