@@ -186,3 +186,6 @@ footer p {
   position: relative; /* This ensures the pseudo-elements can be positioned relative to the divider */
   border-radius: 10px; /* This rounds the edges */
 }
+body::-webkit-scrollbar {
+  display: none;
+}

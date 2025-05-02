@@ -208,3 +208,6 @@
 .frac span.symbol {
     display: none;
 } 
+body::-webkit-scrollbar {
+  display: none;
+}
