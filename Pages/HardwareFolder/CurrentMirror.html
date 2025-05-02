@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Page</title>
+  <link rel="stylesheet" href="../../CSS/projectStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../../Pages/Home.html">Home</a></li>
+        <li><a href="../../Pages/HardwareFolder/Hardware.html">Hardware Projects</a></li>
+        <li><a href="../../Pages/ProgrammingFolder/Programming.html">Programming Projects</a></li>
+		    <li><a href="../../Pages/DesignProjectsFolder/DesignProjects.html">Design Projects</a></li>
+        <li><a href="../../Pages/Home.html">About Me</a></li>
+    </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+        <h1>Current Mirror Design</h1>
+        <p>Testing performance impact of parameters</p>
+    </section>
+    <section class="project-details">
+      <div class="project-content">
+        <div class="project-text">
+            <h1>MOSFET Performance</h1>
+            <p1>To design an amplifier, the properties of the transistor must be understood. MOFETs are nonlinear 4-terminal devices that allow for many basic functions in most circuits to
+            be possible. MOSFET stands for metal oxide semiconductor field effect transistor, describing
+            how the body of the device is made and functions. This device has 4 terminals, the gate,
+            source, drain and body. These terminals can be powered in certain ways to achieve different
+            results. Generally the body will be tied to the source of the MOSFET or grounded, as the body
+            has to be tied to the lowest potential of the circuit to maintain the polarity of the MOSFET and
+            prevent the body effect. MOSFETS can make use of free electrons or electron “holes” to create
+            a channel that allows electrons to flow from the source to the drain, when under the influence of
+            a strong enough field. This is done by “doping” the substrate with either holes or electrons which
+            determines if the transistor is an n-MOS or p-MOS.
+            </p1>
+            <br><br>
+            <p1>    
+                MOSFETs can be used to replace many components as they can take up considerably less
+                area which can be very expensive on a chip. For example, connecting the gate and the drain of
+                a MOSFET (called a gated diode) can act as an active resistor, which can have a variable
+                resistance and takes up much less area than a resistor. The experiments in this lab study how
+                changing the lengths of the n-mos and p-mos transistors affect different parameters and their
+                functions. The parameters include:
+            </p1>
+            <ul style="margin-left: 90px;">
+                <li>V<sub>t</sub>: Threshold voltage</li>
+                <li>λ: Channel length modulation</li>
+                <li>K: Transconductance parameter</li>
+                <li>G<sub>m</sub>r<sub>DS</sub>:Intrinsic Gain </li>
+            </ul>
+        </div>
+        <div class="project-gallery2">
+            <img src="../../Source/mosfet.png" alt="Project Image 1">
+        </div>
+        </div>
+        </div>
+        <br>
+        <div class="project-content">  
+            <div class="project-gallery1">
+                <img src="../../Source/oprartingPrinciple.png">
+            </div>
+            <div class = "porject-text"></div> 
+            <div class = "project-text"></div> 
+            <div class = "project-text"></div> 
+            <div class = "project-text"></div>   
+            <div class="project-text">
+                <h1>Operating Principle</h1>
+                <p>The MOSFET can function in the three following modes: cutoff, linear and saturation. First it is
+                    important to discuss important parameters of the MOSFET. V<sub>t</sub>
+                    is the threshold voltage
+                    determined by the design and technology of the MOSFET. K<sub>n</sub>' is the transconductance
+                    parameter of the transistor, dependent on the electron mobility, width/length ratio, and gate
+                    oxide capacitance. λ is the channel length modulation, impacting the stability of the current for a
+                    variable V<sub>GS</sub>, where a smaller CLM is desired and results in a flatter ID curve in the saturation
+                    region.
+                </p>
+                <p>
+                    Cutoff region is when the MOSFET is “off”, it is not conducting and has no channel for electron
+    flow. When the voltage across the gate and source is less than the threshold voltage. The
+    transistor is in the linear region when V<sub>GS</sub> is greater than V<sub>T</sub>, but the voltage difference between
+    the drain and source is less than the difference between V<sub>GS</sub> and V<sub>T</sub>. In this region, the I<sub>DS</sub>
+    increases linearly with V<sub>DS</sub> hence the name. This region is undesirable for current source
+    applications due to the slope of the I<sub>DS</sub> curve. The I<sub>DS</sub> in this region increases with V<sub>DS</sub> as the
+    channel between the drain and the source is forming, and increasing in length in the MOSFET.
+    When V<sub>DS</sub> is greater than V<sub>GS</sub>-V<sub>T</sub> the transistor is in the saturation region, meaning V<sub>D</sub> must be
+    higher than V<sub>G</sub>-V<sub>T</sub>. This is when the channel for electron flow is fully formed, and the same
+    amount of current is flowing with an increasing V<sub>DS</sub>, it can be said the channel is fully saturated. From the IV characteristics the current in the drain can be modeled with the following equation:
+                </p>
+                <p>
+                    $$i_D = \frac{1}{2}k'_n\left(\frac{W}{L}\right)(v_{GS} - V_{tn})^2 (1 + \lambda v_{DS})$$
+                </p>
+            </div>
+        </div>
+    <div class="divider"></div>
+        <div class="project-content">
+          <div class="project-text">
+          </div>
+          </div>
+          <div class="project-gallery1">
+          </div>
+        </div>
+        <div class="project-content">    
+            <div class="project-text">
+            </div>
+            </div>
+            <div class="project-gallery2">
+            </div>
+        </div> 
+      <div class="divider"></div>
+      <div class="project-content">
+        <div class="project-text">
+        </div>
+      </div>
+      <div class="project-gallery2">
+        </div>
+      </div>
+      </section>
+  </main>
+  <footer>
+    <p>Contact: Kachus1@mcmaster.ca</p>
+  </footer>
+</body>
+</html>
